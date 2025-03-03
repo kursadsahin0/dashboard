@@ -1,42 +1,227 @@
+/* Temel Stiller */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  --primary-color: #872341;
+  --secondary-color: #BE3144;
+  --background-color: #09122C;
+  --surface-color: rgba(9, 18, 44, 0.9);
+  --text-primary: #ffffff;
+  --text-secondary: #e0e0e0;
+  --border-color: rgba(255, 255, 255, 0.1);
 }
 
 * {
-  box-sizing: border-box;
-  padding: 0;
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+body {
+  background: var(--background-color);
+  color: var(--text-primary);
+  min-height: 100vh;
+  line-height: 1.5;
+  background-image: linear-gradient(to bottom right, 
+    rgba(135, 35, 65, 0.05) 0%,
+    rgba(9, 18, 44, 0.1) 100%);
+  background-attachment: fixed;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+/* Dashboard Container */
+.dashboard-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 2rem;
+  position: relative;
+  background: var(--background-color);
+  background-image: linear-gradient(to bottom right, 
+    rgba(135, 35, 65, 0.05) 0%,
+    rgba(9, 18, 44, 0.1) 100%);
+}
+
+/* Dashboard Başlık */
+.dashboardTitle {
+  font-size: 2.25rem;
+  font-weight: 800;
+  text-align: left;
+  margin: 2rem 0 3rem;
+  color: var(--text-primary);
+  position: relative;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--border-color);
+}
+
+/* CRUD Butonu */
+.crud-button {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  z-index: 1000;
+  background: var(--primary-color);
+  color: var(--text-primary);
+  border: none;
+  padding: 0.875rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.crud-button:hover {
+  background: var(--secondary-color);
+  transform: translateY(-1px);
+}
+
+.crud-button .icon {
+  font-size: 1.25rem;
+}
+
+/* Filtre Bölümü */
+.filter {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background: var(--surface-color);
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--border-color);
+}
+
+.filterGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.filterLabel {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-align: center;
+}
+
+.filterInput {
+  padding: 0.75rem 1rem;
+  font-size: 0.95rem;
+  border-radius: 6px;
+  border: 1px solid var(--border-color);
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text-primary);
+  width: 220px;
+  transition: all 0.2s ease;
+}
+
+.filterInput:hover {
+  border-color: rgba(135, 35, 65, 0.5);
+}
+
+.filterInput:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px rgba(135, 35, 65, 0.2);
+}
+
+/* Chart Container */
+.chartContainer {
+  background: var(--surface-color);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 2rem 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--border-color);
+}
+
+/* Loading State */
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+  color: var(--text-secondary);
+  font-size: 1rem;
+  letter-spacing: 0.3px;
+}
+
+/* Responsive Tasarım */
+@media (max-width: 768px) {
+  .dashboardTitle {
+    font-size: 1.75rem;
+    margin: 1.5rem 0;
+    text-align: center;
   }
+
+  .filter {
+    flex-direction: column;
+    padding: 1.25rem;
+    gap: 1rem;
+  }
+
+  .filterInput {
+    width: 100%;
+  }
+
+  .crud-button {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    top: auto;
+    padding: 1rem;
+    border-radius: 50%;
+    aspect-ratio: 1;
+    display: grid;
+    place-items: center;
+  }
+
+  .crud-button span {
+    display: none;
+  }
+
+  .crud-button .icon {
+    font-size: 1.5rem;
+    margin: 0;
+  }
+
+  .chartContainer {
+    padding: 1rem;
+    margin: 1rem 0;
+  }
+}
+
+/* Özel Scroll Bar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--secondary-color);
+}
+
+/* Input ikonları için stil */
+input[type="date"]::-webkit-calendar-picker-indicator,
+input[type="time"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator:hover,
+input[type="time"]::-webkit-calendar-picker-indicator:hover {
+  opacity: 1;
 }

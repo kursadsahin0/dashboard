@@ -1,40 +1,92 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# Dashboard Projesi
 
-## Getting Started
+Bu proje, gerçek zamanlı veri takibi ve kullanıcı yönetimi sağlayan modern bir dashboard uygulamasıdır.
 
-First, run the development server:
+## Özellikler
 
+- 📊 Gerçek zamanlı veri görselleştirme
+- 👥 Kullanıcı yönetimi (CRUD işlemleri)
+- 📅 Tarih ve saat bazlı veri filtreleme
+- 🎨 Modern ve responsive tasarım
+- 🔄 Otomatik veri güncelleme (5 saniyede bir)
+- 🌓 Koyu tema
+
+## Teknolojiler
+
+- Next.js
+- React
+- Redux Toolkit
+- Firebase Realtime Database
+- React Icons
+- CSS Modules
+
+## Kurulum
+
+1. Projeyi klonlayın:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone [proje-url]
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Bağımlılıkları yükleyin:
+```bash
+npm install
+```
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+3. Firebase yapılandırmasını oluşturun:
+   - Firebase Console'dan yeni bir proje oluşturun
+   - Realtime Database'i etkinleştirin
+   - Firebase yapılandırma bilgilerinizi `.env.local` dosyasına ekleyin:
+```env
+NEXT_PUBLIC_FIREBASE_API_KEY=your_api_key
+NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=your_auth_domain
+NEXT_PUBLIC_FIREBASE_PROJECT_ID=your_project_id
+NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=your_storage_bucket
+NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=your_messaging_sender_id
+NEXT_PUBLIC_FIREBASE_APP_ID=your_app_id
+NEXT_PUBLIC_FIREBASE_DATABASE_URL=your_database_url
+```
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+4. Uygulamayı başlatın:
+```bash
+npm run dev
+```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+## Kullanım
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Dashboard
 
-## Learn More
+- Ana sayfada gerçek zamanlı veri grafiğini görüntüleyebilirsiniz
+- Tarih ve saat filtreleri ile verileri filtreleyebilirsiniz
+- "Kullanıcı Yönetimi" butonu ile CRUD sayfasına geçiş yapabilirsiniz
 
-To learn more about Next.js, take a look at the following resources:
+### Kullanıcı Yönetimi
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+- Yeni kullanıcı ekleyebilirsiniz
+- Mevcut kullanıcıları düzenleyebilirsiniz
+- Kullanıcıları silebilirsiniz
+- Kullanıcı listesini görüntüleyebilirsiniz
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Responsive Tasarım
 
-## Deploy on Vercel
+- Desktop, tablet ve mobil cihazlarda uyumlu görünüm
+- Mobil görünümde optimize edilmiş butonlar ve layout
+- Esnek grid sistemi
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Performans Özellikleri
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+- Optimize edilmiş render işlemleri
+- Verimli state yönetimi
+- Sayfa yüklemelerinde smooth geçişler
+- Minimal ve optimize edilmiş CSS
+
+## Katkıda Bulunma
+
+1. Bu repository'yi fork edin
+2. Feature branch'i oluşturun (`git checkout -b feature/YeniOzellik`)
+3. Değişikliklerinizi commit edin (`git commit -m 'Yeni özellik eklendi'`)
+4. Branch'inizi push edin (`git push origin feature/YeniOzellik`)
+5. Pull Request oluşturun
+
+## Lisans
+
+Bu proje MIT lisansı altında lisanslanmıştır. Daha fazla bilgi için `LICENSE` dosyasına bakınız.

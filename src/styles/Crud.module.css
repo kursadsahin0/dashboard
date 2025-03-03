@@ -1,0 +1,292 @@
+/* Ana konteyner */
+.crudContainer {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 2.5rem;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding: 1rem 2rem;
+  background: var(--background-color);
+  background-image: linear-gradient(to bottom right, 
+    rgba(135, 35, 65, 0.05) 0%,
+    rgba(9, 18, 44, 0.1) 100%);
+  border-radius: 12px;
+  backdrop-filter: blur(8px);
+}
+
+/* Geri Dönüş Butonu */
+.backButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, #872341, #BE3144);
+  color: white;
+  text-decoration: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(135, 35, 65, 0.3);
+  margin-left: auto;
+}
+
+.backButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(190, 49, 68, 0.4);
+}
+
+/* Başlık */
+.formTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 2.5rem;
+  letter-spacing: -0.02em;
+  position: relative;
+  display: inline-block;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.formTitle::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #872341, #BE3144);
+  border-radius: 2px;
+}
+
+/* Form Alanları */
+.userForm {
+  background: rgba(255, 255, 255, 0.03);
+  padding: 2rem;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 2rem;
+}
+
+.formLabel {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.inputField {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: #fff;
+  transition: all 0.3s ease;
+  margin-bottom: 1rem;
+}
+
+.inputField:hover {
+  border-color: rgba(135, 35, 65, 0.5);
+}
+
+.inputField:focus {
+  outline: none;
+  border-color: #872341;
+  box-shadow: 0 0 0 3px rgba(135, 35, 65, 0.2);
+}
+
+/* Hata Mesajları */
+.errorMessage {
+  color: #ff4d4d;
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Form Butonları */
+.submitButton, .cancelButton {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+}
+
+.submitButton {
+  background: linear-gradient(135deg, #872341, #BE3144);
+  color: white;
+  box-shadow: 0 4px 15px rgba(135, 35, 65, 0.3);
+}
+
+.submitButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(190, 49, 68, 0.4);
+}
+
+.cancelButton {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.cancelButton:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* Kullanıcı Listesi */
+.userList {
+  list-style: none;
+  padding: 0;
+  margin-top: 2rem;
+}
+
+.userItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  margin-bottom: 1rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  cursor: grab;
+}
+
+.userItem:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.userName {
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-right: 1rem;
+}
+
+/* Aksiyon Butonları */
+.actions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.actionButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.actionButton:hover {
+  background: rgba(135, 35, 65, 0.3);
+  transform: translateY(-2px);
+}
+
+.editIcon {
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+.deleteIcon {
+  font-size: 1.2rem;
+  color: #ff4d4d;
+}
+
+/* Animasyonlar */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.userItem {
+  animation: slideIn 0.3s ease-out forwards;
+}
+
+/* Responsive Tasarım */
+@media (max-width: 768px) {
+  .crudContainer {
+    margin: 1rem;
+    padding: 1.5rem;
+  }
+
+  .formTitle {
+    font-size: 2rem;
+  }
+
+  .userItem {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .actions {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .actionButton {
+    width: 48px;
+    height: 48px;
+  }
+}
+
+/* Loading Durumu */
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+}
+
+/* Sürükle-Bırak Efektleri */
+.userItem.dragging {
+  opacity: 0.5;
+  background: rgba(135, 35, 65, 0.2);
+}
+
+.userItem.dragOver {
+  border: 2px dashed #872341;
+  margin-top: 1rem;
+}
